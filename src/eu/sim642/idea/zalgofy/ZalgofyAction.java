@@ -12,9 +12,11 @@ import com.intellij.refactoring.actions.BaseRefactoringAction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.function.UnaryOperator;
+
 public class ZalgofyAction extends BaseRefactoringAction {
 
-    private final ZalgoOperator zalgoOperator = new ZalgoOperator();
+    private final UnaryOperator<String> operator = new ZalgoIdentifierOperator();
 
     @Override
     protected boolean isAvailableInEditorOnly() {
@@ -40,7 +42,7 @@ public class ZalgofyAction extends BaseRefactoringAction {
                 RefactoringFactory refactoringFactory = RefactoringFactory.getInstance(project);
                 for (PsiElement element : elements) {
                     String name = ((PsiNamedElement) element).getName();
-                    String newName = "$" + zalgoOperator.apply(name);
+                    String newName = operator.apply(name);
                     refactoringFactory.createRename(element, newName).run();
                 }
             }

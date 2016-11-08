@@ -25,6 +25,8 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
+    <localInspection groupPath="Java" language="JAVA" shortName="Zalgo" runForWholeFile="true" enabledByDefault="true" level="INFORMATION"
+                     implementationClass="eu.sim642.idea.zalgofy.ZalgoInspection" displayName="Zalgo" groupName="Fun"/>
   </extensions>
 
   <actions>
@@ -32,12 +34,6 @@
     <action id="Zalgofy.Zalgofy" class="eu.sim642.idea.zalgofy.ZalgofyAction" text="Zalgofy" description="Zalgofy">
       <add-to-group group-id="RefactoringMenu" anchor="after" relative-to-action="RenameElement"/>
       <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt Y"/>
-    </action>
-    <action id="Zalgofy.ZalgofyFile" class="eu.sim642.idea.zalgofy.ZalgofyFileAction" text="Zalgofy" description="Zalgofy">
-      <add-to-group group-id="CodeFormatGroup" anchor="after" relative-to-action="ReformatCode"/>
-    </action>
-    <action id="Zalgofy.ZalgofyProject" class="eu.sim642.idea.zalgofy.ZalgofyProjectAction" text="Zalgofy" description="Zalgofy">
-      <add-to-group group-id="InspectCodeGroup" anchor="after" relative-to-action="CodeCleanup"/>
     </action>
   </actions>
 
