@@ -2,7 +2,7 @@
   <id>eu.sim642.idea.zalgofy</id>
   <name>Zalgofy</name>
   <version>1.0</version>
-  <!--<vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>-->
+  <vendor email="simmo.saan@gmail.com" url="https://github.com/sim642/intellij-zalgofy">Simmo Saan</vendor>
 
   <description><![CDATA[
       Zalgofy your code with ease!
