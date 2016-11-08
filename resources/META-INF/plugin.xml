@@ -25,8 +25,8 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
-    <localInspection groupPath="Java" language="JAVA" shortName="Zalgo" runForWholeFile="true" enabledByDefault="true" level="INFORMATION"
-                     implementationClass="eu.sim642.idea.zalgofy.ZalgoInspection" displayName="Zalgo" groupName="Fun"/>
+    <localInspection groupPath="Java" language="JAVA" shortName="Zalgo" runForWholeFile="true" enabledByDefault="false" level="INFO"
+                     implementationClass="eu.sim642.idea.zalgofy.ZalgoInspection" displayName="Zalgo" groupName="Fun" cleanupTool="true"/>
   </extensions>
 
   <actions>

@@ -1,5 +1,6 @@
 package eu.sim642.idea.zalgofy;
 
+import com.intellij.codeInspection.CleanupLocalInspectionTool;
 import com.intellij.psi.PsiIdentifier;
 import com.intellij.psi.PsiNamedElement;
 import com.siyeh.ig.BaseInspection;
@@ -12,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.UnaryOperator;
 
-public class ZalgoInspection extends BaseInspection {
+public class ZalgoInspection extends BaseInspection implements CleanupLocalInspectionTool {
 
     private final UnaryOperator<String> operator = new ZalgoIdentifierOperator();
 
