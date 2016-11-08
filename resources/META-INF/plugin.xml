@@ -1,18 +1,32 @@
 <idea-plugin version="2">
   <id>eu.sim642.idea.zalgofy</id>
   <name>Zalgofy</name>
-  <version>1.0</version>
+  <version>1.2</version>
   <vendor email="simmo.saan@gmail.com" url="https://github.com/sim642/intellij-zalgofy">Simmo Saan</vendor>
 
   <description><![CDATA[
       Zalgofy your code with ease!
     ]]></description>
 
-  <!--<change-notes><![CDATA[-->
-      <!--Add change notes here.<br>-->
-      <!--<em>most HTML tags may be used</em>-->
-    <!--]]>-->
-  <!--</change-notes>-->
+  <change-notes><![CDATA[
+      <dl>
+        <dt>v1.2</dt>
+        <dd>
+          <ul>
+              <li>Add zalgofy inspection</li>
+              <li>Allow inspection to be used as cleanup tool</li>
+          </ul>
+        </dd>
+
+        <dt>v1.0</dt>
+        <dd>
+          <ul>
+              <li>Add zalgofy of identifiers</li>
+          </ul>
+        </dd>
+      </dl>
+    ]]>
+  </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="141.0"/>
