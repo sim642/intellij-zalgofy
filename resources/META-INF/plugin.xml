@@ -33,6 +33,9 @@
       <add-to-group group-id="RefactoringMenu" anchor="after" relative-to-action="RenameElement"/>
       <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt Y"/>
     </action>
+    <action id="ZalgofyFile" class="eu.sim642.idea.zalgofy.ZalgofyFileAction" text="Zalgofy" description="Zalgofy">
+      <add-to-group group-id="CodeFormatGroup" anchor="after" relative-to-action="ReformatCode"/>
+    </action>
   </actions>
 
 </idea-plugin>
