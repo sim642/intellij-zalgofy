@@ -13,7 +13,7 @@ public class ZalgoOperator implements UnaryOperator<String> {
 
         for (char c : s.toCharArray()) {
             sb.append(c);
-            int max = (int) Math.max(0, RANDOM.nextGaussian() * 10 + 20);
+            int max = (int) Math.max(0, RANDOM.nextGaussian() * 1 + 1);
             for (int i = 0; i < max; i++)
                 sb.append(getRandomZalgoChar());
         }
