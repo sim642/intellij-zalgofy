@@ -36,6 +36,9 @@
     <action id="Zalgofy.ZalgofyFile" class="eu.sim642.idea.zalgofy.ZalgofyFileAction" text="Zalgofy" description="Zalgofy">
       <add-to-group group-id="CodeFormatGroup" anchor="after" relative-to-action="ReformatCode"/>
     </action>
+    <action id="Zalgofy.ZalgofyProject" class="eu.sim642.idea.zalgofy.ZalgofyProjectAction" text="Zalgofy" description="Zalgofy">
+      <add-to-group group-id="InspectCodeGroup" anchor="after" relative-to-action="CodeCleanup"/>
+    </action>
   </actions>
 
 </idea-plugin>
