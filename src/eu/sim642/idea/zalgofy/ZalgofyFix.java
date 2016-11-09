@@ -3,6 +3,7 @@ package eu.sim642.idea.zalgofy;
 import com.intellij.codeInspection.ProblemDescriptor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiNamedElement;
 import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.RenameRefactoring;
@@ -31,6 +32,9 @@ public class ZalgofyFix extends InspectionGadgetsFix {
     public void doFix(final Project project, final ProblemDescriptor descriptor) {
         final PsiElement nameIdentifier = descriptor.getPsiElement();
         final PsiElement elementToRename = nameIdentifier.getParent();
+
+        if (elementToRename instanceof PsiMethod && ((PsiMethod) elementToRename).isConstructor()) // exclude constructors
+            return;
 
         final RefactoringFactory factory = RefactoringFactory.getInstance(project);
         final RenameRefactoring renameRefactoring =
