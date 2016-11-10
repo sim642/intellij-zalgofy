@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>eu.sim642.idea.zalgofy</id>
   <name>Zalgofy</name>
-  <version>1.2</version>
+  <version>1.3</version>
   <vendor email="simmo.saan@gmail.com" url="https://github.com/sim642/intellij-zalgofy">Simmo Saan</vendor>
 
   <description><![CDATA[
@@ -15,6 +15,14 @@
 
   <change-notes><![CDATA[
       <dl>
+        <dt>v1.3</dt>
+        <dd>
+          <ul>
+              <li>Make inspection fix non-interactive</li>
+              <li>Fix inspection fix renaming constructors differently from classes</li>
+          </ul>
+        </dd>
+
         <dt>v1.2</dt>
         <dd>
           <ul>
