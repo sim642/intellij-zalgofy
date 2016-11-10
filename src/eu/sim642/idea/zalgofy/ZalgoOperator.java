@@ -9,11 +9,13 @@ public class ZalgoOperator implements UnaryOperator<String> {
 
     @Override
     public String apply(String s) {
-        StringBuilder sb = new StringBuilder();
+        double mean = Math.max(1.5, 10.0 / s.length());
+        double std = mean / 2;
 
+        StringBuilder sb = new StringBuilder();
         for (char c : s.toCharArray()) {
             sb.append(c);
-            int max = (int) Math.max(0, RANDOM.nextGaussian() * 1 + 1);
+            int max = (int) Math.max(0, RANDOM.nextGaussian() * std + mean);
             for (int i = 0; i < max; i++)
                 sb.append(getRandomZalgoChar());
         }

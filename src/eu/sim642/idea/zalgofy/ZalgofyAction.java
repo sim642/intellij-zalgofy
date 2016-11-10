@@ -16,7 +16,7 @@ import java.util.function.UnaryOperator;
 
 public class ZalgofyAction extends BaseRefactoringAction {
 
-    private final UnaryOperator<String> operator = new ZalgoIdentifierOperator();
+    private final UnaryOperator<String> operator = new ZalgoOperator();
 
     @Override
     protected boolean isAvailableInEditorOnly() {

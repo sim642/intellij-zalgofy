@@ -14,7 +14,7 @@ import java.util.function.UnaryOperator;
 
 public class ZalgofyFix extends InspectionGadgetsFix {
 
-    private final UnaryOperator<String> operator = new ZalgoIdentifierOperator();
+    private final UnaryOperator<String> operator = new ZalgoOperator();
 
     @NotNull
     @Override
