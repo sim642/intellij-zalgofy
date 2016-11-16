@@ -2,19 +2,17 @@ package eu.sim642.idea.zalgofy;
 
 import com.intellij.codeInspection.ProblemDescriptor;
 import com.intellij.openapi.project.Project;
+import com.intellij.psi.PsiComment;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiIdentifier;
 import com.intellij.psi.PsiMethod;
-import com.intellij.psi.PsiNamedElement;
-import com.intellij.refactoring.RefactoringFactory;
-import com.intellij.refactoring.RenameRefactoring;
 import com.siyeh.ig.InspectionGadgetsFix;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.function.UnaryOperator;
-
 public class ZalgofyFix extends InspectionGadgetsFix {
 
-    private final UnaryOperator<String> operator = new ZalgoOperator();
+    private final IdentifierZalgofier identifierZalgofier = new IdentifierZalgofier();
+    private final CommentZalgofier commentZalgofier = new CommentZalgofier();
 
     @NotNull
     @Override
@@ -30,18 +28,17 @@ public class ZalgofyFix extends InspectionGadgetsFix {
 
     @Override
     public void doFix(final Project project, final ProblemDescriptor descriptor) {
-        final PsiElement nameIdentifier = descriptor.getPsiElement();
-        final PsiElement elementToRename = nameIdentifier.getParent();
+        PsiElement element = descriptor.getPsiElement();
+        if (element instanceof PsiIdentifier) {
+            final PsiElement elementToRename = element.getParent();
 
-        if (elementToRename instanceof PsiMethod && ((PsiMethod) elementToRename).isConstructor()) // exclude constructors
-            return;
+            if (elementToRename instanceof PsiMethod && ((PsiMethod) elementToRename).isConstructor()) // exclude constructors
+                return;
 
-        final RefactoringFactory factory = RefactoringFactory.getInstance(project);
-        final RenameRefactoring renameRefactoring =
-                factory.createRename(elementToRename, operator.apply(((PsiNamedElement) elementToRename).getName()), false, false);
-        renameRefactoring.setInteractive(null);
-        renameRefactoring.setPreviewUsages(false);
-        renameRefactoring.run();
+            identifierZalgofier.zalgofy(project, element, false);
+        }
+        else if (element instanceof PsiComment)
+            commentZalgofier.zalgofy(project, element, false);
     }
 
     @Override
