@@ -8,8 +8,8 @@
       Zalgofy your code with ease!
 
       <ul>
-        <li>Zalgofy refactoring to apply zalgo to single identifier</li>
-        <li>Zalgofy inspection and fix to apply zalgo to identifiers in bulk</li>
+        <li>Zalgofy refactoring to apply zalgo to single identifier or comment</li>
+        <li>Zalgofy inspection and fix to apply zalgo to identifiers and comments in bulk</li>
       </ul>
     ]]></description>
 
